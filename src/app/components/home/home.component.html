@@ -1,0 +1,37 @@
+<nav>
+  <div>
+    <img style="width: 100%; height: 512px;" src="../../../assets/img/hero.png">
+  </div>
+</nav>
+<div>
+  <p class="font title mt-5">{{title}}</p>
+</div>
+<div class="container">
+  <div class="row">
+
+    <div class="col mt-5 shadow">
+      <div class="card mt-4" *ngFor="let side of sides">
+        <button  type="button" class="btn btn-light text" (click)="searchArticle(side.nombre)" >
+          {{side.nombre}}
+          <span class="flex"></span>
+          <span class="material-symbols-outlined">
+            arrow_forward
+          </span>
+        </button>
+      
+      </div>
+    </div>
+
+    <div class="col mt-5" *ngFor="let list of lists">
+      <div class="card">
+        <img [src]="list.image" class="img" alt="image">
+        <div class="card-body">
+          <h2 class="card-title text">{{list.title }}</h2>
+          <p class="card-text text">{{list.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-newsletter></app-newsletter>
